@@ -1,0 +1,38 @@
+body {
+  background: #084770;
+  font: normal 15pt Arial;
+}
+header {
+  color: #28b605fb;
+  text-align: center;
+}
+section {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  width: 600px;
+  margin: auto;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.445);
+  font: normal 10pt Arial;
+}
+select {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.445);
+  width: 250px;
+}
+div {
+  padding: 10px;
+  text-align: center;
+  font: normal 20px Arial;
+}
+input#botadd {
+  background-color: #28b605fb;
+}
+div > input {
+  background-color: #28b605fb;
+  margin-top: 15px;
+}
+footer {
+  color: #28b605fb;
+  text-align: center;
+  font-style: italic;
+}

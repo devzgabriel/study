@@ -1,0 +1,2 @@
+def decompoe(n):
+    

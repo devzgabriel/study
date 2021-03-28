@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercicio</title>
+    <style>
+      body {
+        background-color: rgb(2, 91, 150);
+        color: rgb(0, 0, 0);
+        font-size: normal 20px Arial;
+      }
+      div#area {
+        font: normal 20pt Arial;
+        color: rgb(71, 6, 6);
+        background-color: orange;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Olá, Mundo!</h1>
+    <p>Python é bao</p>
+    <!--metodo de verificação 1-->
+    <div id="area" onclick="clicar()">Clique aqui</div>
+    <script>
+      /*window.alert('Olá Mundo')
+        window.confirm('OK para confirmar')
+        var nome = window.prompt('Digita nome ae')
+        window.alert('Olá, '+nome)
+        document.write(`${nome.toUpperCase()}, seu nome tem ${nome.length} letras <br/> `)
+        n1=Number.parseFloat(window.prompt('N1:'))
+        n2=Number.parseFloat(window.prompt('N2:'))
+        s= n1+n2
+        window.alert(s)*/
+      //var mensagem = window.document.quertySelector('div#area')
+      var a = window.document.getElementById("area")
+      a.addEventListener("mouseenter", entrou) //metodo de verificação 2
+      a.addEventListener("mouseout", saiu)
+      function clicar() {
+        a.innerHTML = "Click"
+      }
+      function entrou() {
+        a.innerHTML = "Entrou"
+      }
+      function saiu() {
+        a.innerHTML = "Saiu"
+      }
+    </script>
+  </body>
+</html>

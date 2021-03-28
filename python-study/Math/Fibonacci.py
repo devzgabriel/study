@@ -1,0 +1,13 @@
+n_term_f = int(input('Quantos termos da sequência que saber: '))
+v1 = 0
+v2 = 1
+c = 3
+if n_term_f != 0:
+    print(f'{v1}, {v2}', end=', ')
+    while c <= n_term_f:
+        v3 = v1 + v2
+        print(f'{v3}', end='')
+        print(', 'if c < n_term_f else '', end='')
+        v1 = v2
+        v2 = v3
+        c += 1
