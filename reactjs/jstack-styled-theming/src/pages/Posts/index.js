@@ -5,15 +5,11 @@ import Post from './Post';
 
 import posts from './posts';
 
-export default function PostsList() {
+export default function Posts() {
   return (
     <Container>
       {posts.map((post) => (
-        <Post
-          key={post.id}
-          title={post.title}
-          description={post.description}
-        />
+        <Post key={post.id} title={post.title} description={post.description} />
       ))}
     </Container>
   );
