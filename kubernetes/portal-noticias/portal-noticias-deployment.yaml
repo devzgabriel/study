@@ -17,6 +17,9 @@ spec:
           envFrom:
             - configMapRef:
                 name: portal-configmap
+          # env:
+          #   - name: teste
+          #     value: teste
           livenessProbe:
             httpGet:
               path: /
@@ -26,14 +29,18 @@ spec:
             initialDelaySeconds: 20
           readinessProbe:
             httpGet:
-              path: /
+              path: /ping
               port: 80
             periodSeconds: 10
             failureThreshold: 5
             initialDelaySeconds: 3
           resources:
+            limits:
+              cpu: 100m
+              memory: 100Mi
             requests:
-              cpu: 10m
+              cpu: 100m
+              memory: 100Mi
   replicas: 3
   selector:
     matchLabels:
