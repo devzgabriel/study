@@ -14,3 +14,13 @@ func TestArray() {
 
 	fmt.Println(string(65))
 }
+
+func boundCheck(slice []int) {
+	_ = slice[3] // bounds check once
+
+	println(slice[0])
+	println(slice[1])
+	println(slice[2])
+	println(slice[3])
+
+}

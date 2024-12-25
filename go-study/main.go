@@ -1,5 +1,6 @@
 package main
 
 func main() {
-	GuessingGame()
+	d := Dog{}
+	TakeAnimal(d)
 }
