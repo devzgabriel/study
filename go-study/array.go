@@ -6,13 +6,13 @@ import (
 )
 
 func TestArray() {
-	for i, e := range "hello" {
-		s := string(e)
-		a := strconv.QuoteRuneToASCII(e)
-		fmt.Println(i, e, s, a)
+	for idx, ascCode := range "hello" {
+		s := string(ascCode)
+		a := strconv.QuoteRuneToASCII(ascCode)
+		fmt.Println(idx, ascCode, s, a)
 	}
 
-	fmt.Println(string(65))
+	fmt.Println("string(65) == string(rune(65)):", string(65), string(rune(65)))
 }
 
 func boundCheck(slice []int) {
