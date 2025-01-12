@@ -2,15 +2,20 @@ package main
 
 import "fmt"
 
+type Person interface {
+	Smile()
+}
+
 type Customer struct {
 	Balance int64
+	Active  bool
 }
 
 type User struct {
 	Name string
 	ID   string
 	// Embedded struct
-	Customer
+	customer Customer
 }
 
 func (u *User) UpdateName(newName string) {
@@ -20,12 +25,27 @@ func (u *User) UpdateName(newName string) {
 	u.Name = newName
 }
 
+func (u *User) Smile() {
+	fmt.Println("User is smiling")
+}
+
+func takePhoto(p Person) {
+	p.Smile()
+}
+
 func TestUser() {
 
 	user := User{
 		Name: "John",
 		ID:   "123",
 	}
+
+	user.customer = Customer{
+		Balance: 100,
+		Active:  true,
+	}
+
+	takePhoto(&user)
 
 	fmt.Println("User before update:", user)
 

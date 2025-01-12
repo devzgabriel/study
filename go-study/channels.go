@@ -32,3 +32,21 @@ func StudyChan() {
 		time.Sleep(3 * time.Second)
 	}
 }
+
+func StudyChan2() {
+	c := make(chan int)
+
+	go func() {
+		for i := range 100 {
+			c <- i
+		}
+		close(c)
+	}()
+
+	fmt.Println("Hello")
+
+	// fmt.Println(<-c)
+	for j := range c {
+		fmt.Println(j)
+	}
+}
