@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type Person interface {
+type IPerson interface {
 	Smile()
 }
 
@@ -29,7 +29,7 @@ func (u *User) Smile() {
 	fmt.Println("User is smiling")
 }
 
-func takePhoto(p Person) {
+func takePhoto(p IPerson) {
 	p.Smile()
 }
 

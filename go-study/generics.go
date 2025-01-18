@@ -30,3 +30,7 @@ type car[T gasEngine | electricEngine] struct {
 	carModel string
 	engine   T
 }
+
+func Somar[T int | float64](a, b T) T {
+	return a + b
+}
