@@ -1,10 +1,12 @@
 package main
 
 import (
+	"bytes"
 	"context"
 	"fmt"
 	"io"
 	"net/http"
+	"os"
 	"time"
 )
 
@@ -71,4 +73,15 @@ func GetHttpWithCtx() {
 	}
 
 	fmt.Println(string(data))
+}
+
+func PostHttp() {
+	c := http.Client{}
+	jsonVar := bytes.NewBuffer([]byte(`{"name": "wesley"}`))
+	resp, err := c.Post("http://google.com", "application/json", jsonVar)
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+	io.CopyBuffer(os.Stdout, resp.Body, nil)
 }
